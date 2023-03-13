@@ -6,7 +6,7 @@
                         <h2 class="fw-light">Biennvenu dans mon univers créatif</h2>
                         <button class="btn btn-primary mt-5">Mon expertise Web</button>
                     </div>
-                    <div class="col"><img src="img/portrait.jpg" alt="Image de John Doe" class="w-100"></div>
+                    <div class="col"><img src="https://media.licdn.com/dms/image/C4E03AQFGu1r5e2rizw/profile-displayphoto-shrink_800_800/0/1653871149416?e=2147483647&v=beta&t=GwAmUXH2bjAYFMC6X-oZmg7s4XNX-5lDrucSJlNtvCY" alt="Image de John Doe" class="w-100"></div>
                 </div>
             </div>
         </section>

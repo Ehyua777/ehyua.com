@@ -2,7 +2,7 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-4">
-                <a class="navbar-brand text-uppercase fw-bold" href="index.html">
+                <a class="navbar-brand text-uppercase fw-bold" href="index.php">
                     <span class="bg-primary bg-gradient p-1 rounded-3 text-light">Ehyua</span>&nbsp;M'BIA
                 </a>
                 </div>
