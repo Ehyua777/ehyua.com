@@ -1,4 +1,5 @@
 <footer class="border-top">
+<<<<<<< HEAD
     <div class="container py-5">
         <div class="row">
             <div class="col-4">
@@ -41,6 +42,14 @@
                 <div class="modal-header">
                     <h5 class="modal-title">Mentions légales</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+=======
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-4">
+                <a class="navbar-brand text-uppercase fw-bold" href="index.php">
+                    <span class="bg-primary bg-gradient p-1 rounded-3 text-light">Ehyua</span>&nbsp;M'BIA
+                </a>
+>>>>>>> 783d5e00fc6abe5247068212ae7d139bd3afd331
                 </div>
                 <div class="modal-body">
                     <p>
