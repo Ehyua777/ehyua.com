@@ -2,15 +2,13 @@
     <div class="col-12 col-md-7">
         <!--------------debut pb------->
         <?php
-        include('adob.php');
-        include('figma.php');
-        include('design_ui.php');
-        include('design_ux.php');
-        include('video.php');
+        foreach ($designProgressBars as $progressBar) {
+            require('progress_bar_display.php');
+        }
         ?>
         <!--------fin pb-------->
     </div>
     <div class="col-12 col-md-4 offset-md-1">
-        <img src="img/design.jpg" alt="Designe" width="100%">
+        <img src="<?php echo $imagesDatas["design"] ?>" alt="Designe" width="100%">
     </div>
 </div>

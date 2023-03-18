@@ -8,7 +8,7 @@
                     Mon expertise Web
                 </button>
             </div>
-            <div class="col"><img src="<?php echo $presentationDatas['photoUrl'] ?>" alt="Image de John Doe" class="w-100"></div>
+            <div class="col"><img src="<?php echo $imagesDatas['photoUrl'] ?>" alt="Image de John Doe" class="w-100"></div>
         </div>
     </div>
 </section>

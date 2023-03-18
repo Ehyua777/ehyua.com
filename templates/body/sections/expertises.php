@@ -5,9 +5,9 @@
             <h3><?php echo $expertisesDatas['h3']; ?></h3>
         </div>
         <?php
-        include('expertises/top.php');
-        include('expertises/middle.php');
-        include('expertises/bottom.php');
+        include('expertises/web_dev.php');
+        include('expertises/mobile_dev.php');
+        include('expertises/design.php');
         ?>
     </div>
 </section>
