@@ -24,11 +24,3 @@ $imagesDatas = [
     "design" => "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
     "contact" => "img/grab-a-coffee.jpg"
 ];
-
-$webDevProgressBarDatas = [
-    "html5" => ['text' => 'html5', 'class' => 'fa-html5',    'level' => 75],
-    "css3"  => ['text' => 'css3',  'class' => 'fa-css3-alt', 'level' => 75],
-    "js"    => ['text' => 'js',    'class' => 'fa-js',       'level' => 50],
-    "php"   => ['text' => 'php',   'class' => 'fa-php',      'level' => 75],
-    "sass"  => ['text' => 'SASS',  'class' => 'fa-sass',     'level' => 25]
-];
