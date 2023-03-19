@@ -1,18 +1,8 @@
 <?php
-function dbConnect()
-{
-    try {
-        $database = new PDO('mysql:host=localhost;dbname=ehyua;charset=utf8', 'Ehyua777', 'Ehyu@777');
-
-        return $database;
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
-}
-
 function getProgressBars(string $category): array
 {
-    $database = dbConnect();
+    $database = \DBFactory::getMysqlConnexionWithPDO();
+    //$database = dbConnect();
     $getProgressBarQuery = 'SELECT * FROM progress_bar WHERE category = "' . $category . '" ORDER BY id ASC';
     if (!$database) {
         die('La connexion à la base de données a échoué.');

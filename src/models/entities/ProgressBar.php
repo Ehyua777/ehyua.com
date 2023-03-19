@@ -1,5 +1,4 @@
 <?php
-// src/model/comment.php
 class ProgressBar
 {
     public int    $id;
