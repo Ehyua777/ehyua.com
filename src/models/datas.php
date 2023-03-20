@@ -17,6 +17,11 @@ $expertisesDatas = [
     "h3" => "Développement web, design et mobile"
 ];
 
+$contactDatas = [
+    "h2" => "Un projet de developpement ?",
+    "h3" => "Allons en discuter autour d'un café"
+];
+
 $imagesDatas = [
     "photoUrl" => "https://media.licdn.com/dms/image/C4E03AQFGu1r5e2rizw/profile-displayphoto-shrink_800_800/0/1653871149416?e=2147483647&v=beta&t=GwAmUXH2bjAYFMC6X-oZmg7s4XNX-5lDrucSJlNtvCY",
     "webDev"  => "https://img.freepik.com/premium-vector/software-development-programming-language-coding_284092-33.jpg?w=740",

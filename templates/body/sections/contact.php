@@ -1,8 +1,8 @@
 <section id="contact" class="bg-light py-5">
     <div class="container">
         <div class="row">
-            <h2>Un projet de developpement ?</h2>
-            <h3>Allons en discuter autour d'un café</h3>
+            <h2><?= $contactDatas['h2'] ?></h2>
+            <h3><?= $contactDatas['h3'] ?></h3>
         </div>
         <div class="row gy-4 mt-5">
             <div class="col-12 col-md-5">
