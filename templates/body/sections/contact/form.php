@@ -1,4 +1,4 @@
-<form action="#" class="row gy-3">
+<form action="<?php $config->rootPath() ?>" class="row gy-3">
     <div class="col-6">
         <label for="firstName" class="form-label">Prénom</label>
         <input type="text" class="form-control" id="firstName" name="firstName">

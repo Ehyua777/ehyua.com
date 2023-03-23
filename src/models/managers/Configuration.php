@@ -3,29 +3,17 @@ class Configuration
 {
 	protected $vars = array(),
 		$rootPath;
-	//$avatorDir,
-	//$photoDir;
 
 	// SETTERS //	
 	public function setRootPath()
 	{
 		$this->rootPath = 'https://' . $_SERVER['HTTP_HOST'];
 	}
-	/*
-	public function setAvatorDir()
-	{
-		$this->avatorDir = $this->getConfigData('avator_dir');
-	}
-	public function setPhotoDir()
-	{
-		$this->photoDir = $this->getConfigData('photo_dir');
-	}
-*/
+
 	// CONSTRUCTEUR //
 	public function __construct()
 	{
 		$this->rootPath();
-		//$this->setAvatorDir();
 	}
 
 	// GETTERS //
@@ -33,15 +21,6 @@ class Configuration
 	{
 		return $this->rootPath;
 	}
-	/*public function avatorDir()
-	{
-		return $this->avatorDir;
-	}
-	public function photoDir()
-	{
-		return $this->photoDir;
-	}
-*/
 	// AUTRES FONCTIONS //
 	public function getConfigData($var)
 	{
