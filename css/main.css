@@ -1,0 +1,13 @@
+/* Commentaires éventuels sur le fichier CSS */
+
+/* Déclaration de la feuille de style */
+
+
+/* Règles CSS */
+#errorMessage {
+    color: red;
+}
+
+#successMessage {
+    color: green;
+}

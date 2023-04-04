@@ -2,37 +2,18 @@
 require 'C:\Users\EHYUA\wmd\webapps\ehyua.com\src\lib\phpmailer\vendor\phpmailer\phpmailer\src\Exception.php';
 require 'C:\Users\EHYUA\wmd\webapps\ehyua.com\src\lib\phpmailer\vendor\phpmailer\phpmailer\src\PHPMailer.php';
 require 'C:\Users\EHYUA\wmd\webapps\ehyua.com\src\lib\phpmailer\vendor\phpmailer\phpmailer\src\SMTP.php';
+require 'MailConfiguration.manager.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-class Mail
-{
-	protected $addrressee,
-		$subject,
-		$content,
-		$senderName,
-		$senderMailAdress;
 
-	public function checkSubject()
-	{
-		return !empty($this->subject);
-	}
-	public function checkContent()
-	{
-		return !empty($this->content);
-	}
-	public function checkSenderName()
-	{
-		return !empty($this->senderName);
-	}
+class MailManager
+{
+	private $senderName, $senderMailAdress, $subject, $content;
 
 	// SETTERS //
-	public function setAddrressee($addrressee)
-	{
-		$this->addrressee = $addrressee;
-	}
 	public function setSubject($subject)
 	{
 		$this->subject = stripslashes(htmlspecialchars($subject));
@@ -43,7 +24,7 @@ class Mail
 	}
 	public function setSenderName($senderName)
 	{
-		$this->senderName = stripslashes(htmlspecialchars($senderName));
+		$this->senderName = $senderName;
 	}
 	public function setSenderMailAdress($sender)
 	{
@@ -86,7 +67,83 @@ class Mail
 		$contactEmailAlert = array('alertNumber' => $alert, 'error' => $emailErr);
 		return $contactEmailAlert;
 	}
+	// GETTERS //
+	public function subject()
+	{
+		return $this->subject;
+	}
+	public function content()
+	{
+		return $this->content;
+	}
+	public function sender()
+	{
+		return $this->senderMailAdress;
+	}
+	public function senderName()
+	{
+		return $this->senderName;
+	}
+	// FONCTION CLE D'EXPEDITION D'UN COURIER ELECTRONIQUE //
+	function sendAnEmail(MailConfigurationManager $config): bool
+	{
 
+		//Create an instance; passing `true` enables exceptions
+		$mail = new PHPMailer(true);
+
+		try {
+			//Server settings
+			//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+			$mail->isSMTP();                                            //Send using SMTP
+			$mail->Host       = $config->host();                     //Set the SMTP server to send through
+			$mail->SMTPAuth   = $config->authentication();                                   //Enable SMTP authentication
+			$mail->Username   = $config->userName();                     //SMTP username
+			$mail->Password   = $config->password();                               //SMTP password
+			$mail->Port       = $config->port();
+			$mail->SMTPSecure = $config->secure();                               //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+			$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+			//Enable verbose debug output
+
+			//Recipients
+			$mail->setFrom($this->senderMailAdress, $this->senderName); //fourni par le formulaire
+			$mail->addAddress($config->recipient(), $config->recipientName()); //Add a recipient (système)
+			//$mail->addAddress('');               //Name is optional (système)
+			$mail->addReplyTo($this->senderMailAdress, $this->senderName); //fourni par le formulaire
+			//$mail->addCC('cc@example.com');
+			//$mail->addBCC('bcc@example.com');
+
+			//Attachments
+			//$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+			//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+			//Content
+			$mail->isHTML(true);
+			$mail->CharSet = "UTF-8";                               //Set email format to HTML
+			$mail->Subject = $this->subject; //fourni par le formulaire
+			$mail->Body    = $this->content; //fourni par le formulaire
+			//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+			$mail->send();
+			return true;
+		} catch (Exception $e) {
+			return false;
+			echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+		}
+	}
+
+	//checkers
+	public function checkSubject()
+	{
+		return !empty($this->subject);
+	}
+	public function checkContent()
+	{
+		return !empty($this->content);
+	}
+	public function checkSenderName()
+	{
+		return !empty($this->senderName);
+	}
 	public function checkContactPosts($pseudo, $subject, $message)
 	{
 		$alert = 0;
@@ -114,68 +171,5 @@ class Mail
 			'merro' => $messageErr
 		);
 		return $contactAlert;
-	}
-	// GETTERS //
-	public function addrressee()
-	{
-		return $this->addrressee;
-	}
-	public function subject()
-	{
-		return $this->subject;
-	}
-	public function content()
-	{
-		return $this->content;
-	}
-	public function sender()
-	{
-		return $this->sendAnEMail();
-	}
-	public function senderName()
-	{
-		return $this->senderName;
-	}
-	// FONCTION CLE D'EXPEDITION D'UN COURIER ELECTRONIQUE //
-	function sendAnEMail()
-	{
-		//Create an instance; passing `true` enables exceptions
-		$mail = new PHPMailer(true);
-
-		try {
-			//Server settings
-			//$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-			$mail->isSMTP();                                            //Send using SMTP
-			$mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-			$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-			$mail->Username   = 'lumbrera.ehyua@gmail.com';                     //SMTP username
-			$mail->Password   = 'ipqaprhzeieeqbdc';                               //SMTP password
-			$mail->Port       = 465;
-			$mail->SMTPSecure = 'ssl';                               //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-			$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-
-			//Recipients
-			$mail->setFrom($this->senderMailAdress, $this->senderName); //fourni par le formulaire
-			$mail->addAddress("successful.ehyua@outlook.com", "Marcel Ehyua M'BIA"); //Add a recipient (système)
-			//$mail->addAddress('');               //Name is optional (système)
-			$mail->addReplyTo($this->senderMailAdress, $this->senderName); //fourni par le formulaire
-			//$mail->addCC('cc@example.com');
-			//$mail->addBCC('bcc@example.com');
-
-			//Attachments
-			//$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-			//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
-			//Content
-			$mail->isHTML(true);                                  //Set email format to HTML
-			$mail->Subject = $this->subject; //fourni par le formulaire
-			$mail->Body    = $this->content; //fourni par le formulaire
-			//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-			$mail->send();
-			echo '<script>alert("Nous avons bien recu votre mail: Merci bien.");</script>';
-		} catch (Exception $e) {
-			echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-		}
 	}
 }

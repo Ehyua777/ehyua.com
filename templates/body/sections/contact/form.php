@@ -23,3 +23,5 @@
         <button type="submit" name="send" id="send" class="btn btn-primary w-100">Envoyer</button>
     </div>
 </form>
+<p id="errorMessage"></p>
+<script src="js/contact_script.js"></script>
