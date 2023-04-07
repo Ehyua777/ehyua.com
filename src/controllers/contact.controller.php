@@ -28,3 +28,6 @@ if (isset($_POST["send"])) {
 <?php }
     }
 }
+
+$contactRep = new ContactRepository();
+$contact = $contactRep->getContactData($dBCon);

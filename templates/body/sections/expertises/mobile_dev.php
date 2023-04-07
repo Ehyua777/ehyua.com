@@ -1,6 +1,6 @@
 <div class="row mt-5 gy-4">
     <div class="col-12 col-md-4">
-        <img src="<?php echo $imagesDatas["mobileDev"] ?>" alt="Designe" width="100%">
+        <img src="<?= $exp->mobileDevImageUrl(); ?>" alt="Mobile Dev" width="100%">
     </div>
     <div class="col-12 col-md-7 offset-md-1">
         <!--------------debut pb------->

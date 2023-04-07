@@ -7,6 +7,7 @@ $navBarDatas = [
     'contact' => 'Contact'
 ];
 
+/*
 $presentationDatas = [
     "h1" => "Je suis EHYUA M'BIA, Développeur polyvalent Web et Mobile",
     "h2" => "Bienvenu dans mon univers créatif"
@@ -29,3 +30,4 @@ $imagesDatas = [
     "design"    => "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
     "contact"   => "img/grab-a-coffee.jpg"
 ];
+*/

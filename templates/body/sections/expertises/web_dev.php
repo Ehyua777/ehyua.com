@@ -9,6 +9,6 @@
         <!--------fin pb------------------------>
     </div>
     <div class="col-12 offset-md-1 col-md-4">
-        <img src="<?php echo $imagesDatas["webDev"] ?>" alt="Code PHP" width="100%">
+        <img src="<?= $exp->webDevImageUrl(); ?>" alt="Code PHP" width="100%">
     </div>
 </div>
