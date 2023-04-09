@@ -16,6 +16,12 @@ require_once('models/managers/Contact.manager.php');
 require_once('models/repositories/Contact.repository.php');
 require_once('models/managers/Expertise.manager.php');
 require_once('models/repositories/Expersises.repository.php');
+require_once('models/managers/Portfolio.manager.php');
+require_once('models/repositories/Porfolio.repository.php');
+require_once('models/managers/Card.manager.php');
+require_once('models/repositories/Card.repository.php');
+require_once('models/managers/Carousel.manager.php');
+require_once('models/repositories/Carousels.repository.php');
 
 //Objet de configuration
 $dBCon = DBFactory::getMysqlConnexionWithPDO();
@@ -23,5 +29,6 @@ $config = new Configuration();
 
 include('controllers/presentation.controller.php');
 include('controllers/expertises.controller.php');
+include('controllers/porfolio.controller.php');
 include('controllers/contact.controller.php');
 include('controllers/footer.controller.php');

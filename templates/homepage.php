@@ -1,9 +1,4 @@
-<script>
-    if (window.location.hash === '#contact=success') {
-        // Afficher la pop-up
-        alert('Nous avons bien recu votre mail: Merci bien.');
-    }
-</script>
+<script src="js/is_email_success.js"></script>
 <?php
 ob_start();
 include("body/header.php");

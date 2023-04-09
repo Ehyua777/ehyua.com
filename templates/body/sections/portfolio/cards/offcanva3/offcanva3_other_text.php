@@ -1,1 +1,3 @@
-<div>Autre texte</div>
+<div>
+    <p><?= $card3->content(); ?></p>
+</div>
