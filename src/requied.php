@@ -1,6 +1,6 @@
 <?php
-require_once('models/datas.php');
-require_once('lib/DBFactory.php');
+require_once('models/config.php');
+require_once('lib/DBFactory-1.2.php');
 require_once('models/managers/ProgressBar.manager.php');
 require_once('models/repositories/progressBar.repository.php');
 require_once('models/managers/Configuration.manager.php');
@@ -23,8 +23,10 @@ require_once('models/repositories/Card.repository.php');
 require_once('models/managers/Carousel.manager.php');
 require_once('models/repositories/Carousels.repository.php');
 
+//Connexion à la base de données
+$factory = new DBFactory();
+$dBCon = $factory->db();
 //Objet de configuration
-$dBCon = DBFactory::getMysqlConnexionWithPDO();
 $config = new Configuration();
 
 include('controllers/presentation.controller.php');

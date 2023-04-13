@@ -1,0 +1,22 @@
+#-------------------#
+#Personalisation de la configuration du server
+#-------------------#
+
+#Le seuveur doit suivre les liens symboliques
+Options +FollowSymLinks
+
+#Activation du module de réécriture d'URL
+RewriteEngine On
+#RewriteBase /
+
+#-------------------#
+#Règles de réécriture d'URL
+#-------------------#
+
+# Règle pour rediriger toutes les requêtes vers l'index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [NC,L,QSA]
+# Règle pour les mails envoyés avec succes
+RewriteRule ^email-success$ index.php [L]
+

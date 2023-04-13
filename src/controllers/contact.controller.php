@@ -19,7 +19,7 @@ if (isset($_POST["send"])) {
         $smtConfig = $mailCofiguration->getConfigurationData($dBCon, "selected");
         if ($mail->sendAnEmail($smtConfig)) {
             $_POST = array();
-            header("location:index.php#contact=success");
+            header("location:email-success");
         } else { ?>
             <script>
                 // Afficher la pop-up

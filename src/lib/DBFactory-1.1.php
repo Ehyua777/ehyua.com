@@ -28,14 +28,13 @@ class DBFactory
 		}
 		return $db;
 	}
-	public function setDb($dataBase)
+	public function setDb()
 	{
-		$dataBase = self::getMysqlConnexionWithPDO();
-		$this->db = $dataBase;
+		$this->db = self::getMysqlConnexionWithPDO();
 	}
-	public function __construct($dataBase)
+	public function __construct()
 	{
-		$this->setDb($dataBase);
+		$this->setDb();
 	}
 	//Fonction de connection à la base de données via PMYSQLi
 	public static function getMysqlConnexionWithMySQLi()
