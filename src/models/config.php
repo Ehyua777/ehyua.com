@@ -14,3 +14,5 @@ $navBarDatas = [
     'portfolio' => 'Portfolio',
     'contact' => 'Contact'
 ];
+
+$metaDescription = "Developpeur web et mobile moins cher en Côte d'Ivoir";

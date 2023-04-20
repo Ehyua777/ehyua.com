@@ -22,6 +22,7 @@ require_once('models/managers/Card.manager.php');
 require_once('models/repositories/Card.repository.php');
 require_once('models/managers/Carousel.manager.php');
 require_once('models/repositories/Carousels.repository.php');
+require_once('src/controllers/general.functions.php');
 
 //Connexion à la base de données
 $factory = new DBFactory();

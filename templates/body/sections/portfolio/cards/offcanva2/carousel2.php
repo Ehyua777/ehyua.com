@@ -9,7 +9,7 @@
         foreach ($card2Carousel as $carousel) {
         ?>
             <div class="carousel-item <?= $carousel->class(); ?>">
-                <img src="<?= $carousel->imageUrl(); ?>" class="d-block w-100" alt="...">
+                <img src="<?= $carousel->imageUrl(); ?>" class="d-block w-100" alt="..." style="height:300;">
                 <div class="carousel-caption d-none d-md-block">
                     <h5><?= $carousel->label(); ?></h5>
                     <p><?= $carousel->placeholder(); ?></p>

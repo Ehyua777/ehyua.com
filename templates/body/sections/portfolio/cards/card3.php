@@ -1,6 +1,6 @@
 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
     <div class="card">
-        <img src="<?= $card3->imageUrl(); ?>" class="card-img-top" alt="...">
+        <img src="<?= $card3->imageUrl(); ?>" class="card-img-top" alt="..." style="height: 195px;">
         <div class="card-body">
             <?php include('card3_text.php'); ?>
             <!-------------------CANVAS 1 START---------------->
