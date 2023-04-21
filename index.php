@@ -2,4 +2,5 @@
 //Tous les fichier requis ou à inclure
 require('src/requied.php');
 //Page d'accueil
-require('templates/homepage.php');
+include('templates/homepage.php');
+require('templates/layout.php');
